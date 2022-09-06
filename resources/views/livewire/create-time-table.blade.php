@@ -44,7 +44,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label class="fs-6" for="exampleInputEmail1">teacher</label>
-                <select wire:model='teacher_name' name="teacher_name" class="form-control" placeholder="select teacher">
+                <select wire:model='teacher_id' name="teacher_id" class="form-control" placeholder="select teacher">
                   <option>Select one</option>
 
                   @foreach ($teachers as $teachers)
@@ -56,7 +56,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label class="fs-6" for="exampleInputPassword1">class</label>
-                <select wire:model="class_name" class="form-control" id="exampleInputPassword1" placeholder="select class">
+                <select wire:model="class_id" class="form-control" id="exampleInputPassword1" placeholder="select class">
                   <option>Select one</option>
 
                   @foreach ($class as $class)
@@ -69,7 +69,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label class="fs-6" for="exampleInputEmail1">Subject</label>
-                <select wire:model="subject_name" class="form-control" aria-describedby="emailHelp" placeholder="select subject" wire:mode>
+                <select wire:model="subject_id" class="form-control" aria-describedby="emailHelp" placeholder="select subject" wire:mode>
                   <option>Select one</option>
 
                   @foreach ($subjects as $subjects)
@@ -77,6 +77,13 @@
                   @endforeach
 
                 </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="fs-6" for="exampleInputEmail1">time</label>
+                <input wire:model="subject_id" type="time" class="form-control" aria-describedby="emailHelp" placeholder="select subject" wire:mode>
+                </input>
               </div>
             </div>
           </div>

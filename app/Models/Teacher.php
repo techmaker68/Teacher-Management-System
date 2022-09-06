@@ -9,6 +9,7 @@ class Teacher extends Model
 {
     use HasFactory;
 
+
     public function timeTable()
     {
 

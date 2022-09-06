@@ -6,13 +6,14 @@ use Livewire\Component;
 use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\ClassRoom;
+use App\Models\timeTable;
 
 class CreateTimeTable extends Component
 {
 
-    public $class_name;
-    public $teacher_name;
-    public $subject_name;
+    public $class_id;
+    public $teacher_id;
+    public $subject_id;
 
 
     public $classes = '';
@@ -31,10 +32,11 @@ class CreateTimeTable extends Component
     {
 
         $data = $this->validate([
-            'teacher_name' => 'required'
+            'teacher_id' => 'required',
+            'subject_id' => 'required',
+            'class_id' => 'required',
         ]);
-
-        dd($this->teacher_name);
+        timeTable::create($data);
     }
 
     public function render()

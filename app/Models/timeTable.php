@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class timeTable extends Model
 {
     use HasFactory;
+    protected $fillable = ['teacher_id', 'class_id', 'subject_id', 'time', 'duration'];
 
     public function teacher()
     {
