@@ -30,10 +30,11 @@
 
 
     <div class="sidenav">
-      <a class="fs-5" href="#about">Time table</a>
-      <a class="fs-5" href="#services">subjects</a>
-      <a class="fs-5" href="#clients">teachers</a>
-      <a class="fs-5" href="#contact">classes</a>
+      <a class="fs-5" href="/view">View time table</a>
+      <a class="fs-5" href="/timetable">Time table</a>
+      <a class="fs-5" href="/subject">subjects</a>
+      <a class="fs-5" href="/teacher">teachers</a>
+      <a class="fs-5" href="class">classes</a>
     </div>
 
 

@@ -38,6 +38,11 @@
     <div class="main">
 
       <h2>Time Table</h2>
+      @if (session()->has('message'))
+      <div class="alert alert-success">
+        {{ session('message') }}
+      </div>
+      @endif
       <form wire:submit.prevent="CreateTimeSlot">
         <div class="form-box">
           <div div class=" row px-4">
@@ -81,8 +86,15 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label class="fs-6" for="exampleInputEmail1">time</label>
-                <input wire:model="subject_id" type="time" class="form-control" aria-describedby="emailHelp" placeholder="select subject" wire:mode>
+                <label class="fs-6" for="exampleInputEmail1">time </label>
+                <input wire:model='time' type="time" name="time" class="form-control" aria-describedby="emailHelp" wire:mode>
+                </input>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="fs-6" for="exampleInputEmail1">duration (minutes)</label>
+                <input wire:model="duration" class="form-control" type="text" name="duration" placeholder="Add duration" wire:mode>
                 </input>
               </div>
             </div>

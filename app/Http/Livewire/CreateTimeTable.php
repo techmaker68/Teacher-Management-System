@@ -14,6 +14,8 @@ class CreateTimeTable extends Component
     public $class_id;
     public $teacher_id;
     public $subject_id;
+    public $time;
+    public $duration;
 
 
     public $classes = '';
@@ -35,8 +37,12 @@ class CreateTimeTable extends Component
             'teacher_id' => 'required',
             'subject_id' => 'required',
             'class_id' => 'required',
+            'time' => 'required',
+            'duration' => 'required',
         ]);
         timeTable::create($data);
+
+        session()->flash('message', 'time table created  successfully .');
     }
 
     public function render()
