@@ -16,6 +16,8 @@
       position: fixed;
       left: 0;
       right: 0;
+
+      
     }
 
     .sidenav a:hover {
