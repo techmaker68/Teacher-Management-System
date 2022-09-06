@@ -2,12 +2,15 @@
 
   <style>
     .sidenav a {
-      padding: 6px 8px 6px 16px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #2196F3;
-      display: block;
-    }
+                           
+                           padding: 6px 8px 6px 16px;
+                           text-decoration: none;
+                           font-size: 25px;
+                           color: #2f383e;
+                           display: block;
+                           border-bottom: 1px solid #dbd6d6;
+                           margin: 0 6px;
+                           }
 
     .navbar {
       position: fixed;
@@ -28,9 +31,9 @@
 
     .form-box {
       margin: 30px 30px;
-      box-shadow: 0 0 10px #b2b2b291;
       border-radius: 10px;
       padding: 10px 10px 30px;
+      background-color: white;
     }
   </style>
   <div>
@@ -44,7 +47,8 @@
       </div>
       @endif
       <form wire:submit.prevent="CreateTimeSlot">
-        <div class="form-box">
+        <div class="form-box shadow ">
+          <p>Add Time slot for teacher</p>
           <div div class=" row px-4">
             <div class="col-md-6">
               <div class="form-group">

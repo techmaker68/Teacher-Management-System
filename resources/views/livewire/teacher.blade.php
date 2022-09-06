@@ -8,12 +8,15 @@
 
             <style>
                 .sidenav a {
-                    padding: 6px 8px 6px 16px;
-                    text-decoration: none;
-                    font-size: 25px;
-                    color: #2196F3;
-                    display: block;
-                }
+                           
+                           padding: 6px 8px 6px 16px;
+                           text-decoration: none;
+                           font-size: 25px;
+                           color: #2f383e;
+                           display: block;
+                           border-bottom: 1px solid #dbd6d6;
+                           margin: 0 6px;
+                           }
 
                 .navbar {
                     position: fixed;
@@ -27,32 +30,29 @@
 
                 .main {
                     margin-left: 240px;
-                    font-size: 28px;
                     padding: 0px 10px;
                     overflow: hidden;
                 }
 
                 .form-box {
                     margin: 30px 30px;
-                    box-shadow: 0 0 10px #b2b2b291;
                     border-radius: 10px;
                     padding: 10px 10px 30px;
                 }
             </style>
             <div>
                 <livewire:side-bar />
-                <div class="main">
+                <div class="main mt-4">
 
-                    <h2>Time Table</h2>
                     @if (session()->has('message'))
                     <div class="alert alert-success">
                         {{ session('message') }}
                     </div>
                     @endif
-                    <div class="form-box">
+                    <div class="form-box shadow bg-white">
 
-                        <p>All subjects</p>
-                        <table class="table">
+                        <h4>All subjects</h4>
+                        <table class="table table-hover table-bordered">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -63,7 +63,7 @@
                             <tbody>
                                 @foreach ($teacher as $teacher)
                                 <tr>
-                                    <th scope="row">{{ $teacher->url}}</th>
+                                    <th scope="row">{{ $loop->index +1}}</th>
                                     <td>{{$teacher->name}}</td>
                                     <td>{{$teacher->email}}</td>
                                     <td>{{$teacher->address}}</td>
@@ -77,7 +77,7 @@
 
                         <form wire:submit.prevent="CreateTeacher">
 
-                            <div div class=" row px-4">
+                            <div div class=" row ">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="fs-6">Name</label>
@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
 
-                                <div div class=" row px-4">
+                                <div div class=" row ">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="fs-6">Address</label>
@@ -104,9 +104,8 @@
 
 
 
-                                    <div div class=" row px-4">
                                         <div class="col-md-2">
-                                            <button type="submit" class="btn btn-primary mt-3 d-flex justify-content-end ms-auto px-5 py-2">create</button>
+                                            <button type="submit" class="btn btn-primary mt-4 ">create</button>
                                         </div>
                                     </div>
 

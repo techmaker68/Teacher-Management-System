@@ -6,10 +6,11 @@
       z-index: 1;
       top: 55px;
       left: 0;
-      background: #eee;
+      background: white;
       overflow-x: hidden;
       padding: 8px 0;
       height: 100vh;
+      border-top: 1px solid lightgrey;
     }
 
 
@@ -32,9 +33,9 @@
     <div class="sidenav">
       <a class="fs-5" href="/view">View time table</a>
       <a class="fs-5" href="/timetable">Time table</a>
-      <a class="fs-5" href="/subject">subjects</a>
-      <a class="fs-5" href="/teacher">teachers</a>
-      <a class="fs-5" href="class">classes</a>
+      <a class="fs-5" href="/subject">Subjects</a>
+      <a class="fs-5" href="/teacher">Teachers</a>
+      <a class="fs-5" href="class">Classes</a>
     </div>
 
 

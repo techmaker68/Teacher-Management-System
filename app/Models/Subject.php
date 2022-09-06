@@ -10,4 +10,9 @@ class Subject extends Model
 
     protected $guarded = [];
     use HasFactory;
+
+    public function timeTable()
+    {
+        return $this->hasMany(timeTable::class);
+    }
 }

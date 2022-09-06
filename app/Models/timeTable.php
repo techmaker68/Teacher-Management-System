@@ -14,4 +14,12 @@ class timeTable extends Model
     {
         return $this->belongsTo(Teacher::class);
     }
+    public function class()
+    {
+        return $this->belongsTo(ClassRoom::class);
+    }
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
 }
