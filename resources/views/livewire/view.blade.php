@@ -63,20 +63,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($classes as $classes)
-                                        <tr>
-                                            <th scope="row">{{ $classes->url}}</th>
-                                            <td>{{$classes->class_name}}</td>
 
-                                        </tr>
-                                        @endforeach
 
 
 
                                     </tbody>
                                 </table>
 
-                                <form wire:submit.prevent="CreateTeacher">
+                                <form>
 
                                     <div div class=" row px-4">
                                         <div class="col-md-6">
@@ -84,14 +78,14 @@
                                                 <label class="fs-6">Select teacher to view time table</label>
                                                 <select wire:model='teacher_id' name="teacher_id" class="form-control" placeholder="select teacher">
                                                     <option>Select one</option>
-                                                    @foreach ($teachers as $teachers)
-                                                    <option value="{{ $teachers->id }}">{{ $teachers->name }}</option>
+                                                    @foreach ($teacher as $teacher)
+                                                    <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-2 mt-4">
-                                            <button type="submit" class="btn btn-primary mt-3 d-flex justify-content-end ms-auto px-5 py-2">Search</button>
+                                            <button wire:click='searchteacher()' class="btn btn-primary mt-3 d-flex justify-content-end ms-auto px-5 py-2">Search</button>
                                         </div>
                                 </form>
 
