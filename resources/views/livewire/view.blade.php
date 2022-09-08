@@ -99,7 +99,7 @@
                                             <td>{{$timetables->class->class_name}}</td>
                                             <td>{{$timetables->subject->name}}</td>
                                             <td>{{$timetables->time}}</td>
-                                            <td>{{$timetables->Duration}}</td>
+                                            <td>{{$timetables->Duration}} minutes</td>
                                         </tr>
                                         @endforeach
                                         <tr class="text-center">

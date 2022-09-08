@@ -12,6 +12,10 @@ class Teacher extends Component
     public $name;
     public $email;
     public $address;
+    public $qualification;
+    public $timing;
+
+
 
     public function mount()
     {
@@ -25,7 +29,8 @@ class Teacher extends Component
             'name' => 'required',
             'email' => 'required|email',
             'address' => 'required',
-
+            'qualification' => 'required',
+            'timing' => 'required',
         ]);
         Teachers::create($data);
         session()->flash('message', 'Teacher created  successfully .');

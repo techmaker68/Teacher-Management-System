@@ -2,22 +2,21 @@
 
   <style>
     .sidenav a {
-                           
-                           padding: 6px 8px 6px 16px;
-                           text-decoration: none;
-                           font-size: 25px;
-                           color: #2f383e;
-                           display: block;
-                           border-bottom: 1px solid #dbd6d6;
-                           margin: 0 6px;
-                           }
+
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #2f383e;
+      display: block;
+      border-bottom: 1px solid #dbd6d6;
+      margin: 0 6px;
+    }
 
     .navbar {
       position: fixed;
       left: 0;
       right: 0;
 
-      
     }
 
     .sidenav a:hover {
@@ -49,6 +48,15 @@
       </div>
       @endif
       <form wire:submit.prevent="CreateTimeSlot">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+        @endif
         <div class="form-box shadow ">
           <p>Add Time slot for teacher</p>
           <div div class=" row px-4">

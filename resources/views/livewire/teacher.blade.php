@@ -8,15 +8,15 @@
 
             <style>
                 .sidenav a {
-                           
-                           padding: 6px 8px 6px 16px;
-                           text-decoration: none;
-                           font-size: 25px;
-                           color: #2f383e;
-                           display: block;
-                           border-bottom: 1px solid #dbd6d6;
-                           margin: 0 6px;
-                           }
+
+                    padding: 6px 8px 6px 16px;
+                    text-decoration: none;
+                    font-size: 25px;
+                    color: #2f383e;
+                    display: block;
+                    border-bottom: 1px solid #dbd6d6;
+                    margin: 0 6px;
+                }
 
                 .navbar {
                     position: fixed;
@@ -57,7 +57,11 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Description</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">address</th>
+                                    <th scope="col">Qualification</th>
+                                    <th scope="col">timing</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,6 +71,8 @@
                                     <td>{{$teacher->name}}</td>
                                     <td>{{$teacher->email}}</td>
                                     <td>{{$teacher->address}}</td>
+                                    <td>{{$teacher->qualification}}</td>
+                                    <td>{{$teacher->timing}}</td>
                                 </tr>
                                 @endforeach
 
@@ -76,7 +82,15 @@
                         </table>
 
                         <form wire:submit.prevent="CreateTeacher">
-
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
                             <div div class=" row ">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -96,6 +110,21 @@
                                 <div div class=" row ">
                                     <div class="col-md-6">
                                         <div class="form-group">
+                                            <label class="fs-6">Qualification</label>
+                                            <input required wire:model='qualification' name="qualification" class="form-control" placeholder="Address">
+                                            </input>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="fs-6">Timing</label>
+                                        <input type="text" required wire:model='timing' class="form-control"></input>
+                                    </div>
+                                </div>
+
+                                <div div class=" row ">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
                                             <label class="fs-6">Address</label>
                                             <input required wire:model='address' name="teacher_id" class="form-control" placeholder="Address">
                                             </input>
@@ -104,11 +133,11 @@
 
 
 
-                                        <div class="col-md-2">
-                                            <button type="submit" class="btn btn-primary mt-4 ">create</button>
-                                        </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-primary mt-4 ">create</button>
                                     </div>
-
+                                </div>
+                            </div>
                         </form>
 
 
